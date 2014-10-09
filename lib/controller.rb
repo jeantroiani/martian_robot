@@ -7,7 +7,7 @@ class Controller
 	attr_accessor :vehicle
 	
 	def create_grid(rows, columns)
-		@grid = Grid.new(rows, columns)
+		grid_size_limit(rows) && grid_size_limit(columns) ? @grid = Grid.new(rows, columns) : return
 	end
 
 	def deploy(coord_x, coord_y, orientation)
@@ -32,6 +32,14 @@ class Controller
 	end
 
 	private
+
+	def commands_limit(sequence)
+		sequence.length < 101
+	end
+
+	def grid_size_limit(amount)
+		amount < 51
+	end
 
 	def convert_commands(sequence)
 		sequence.split("")

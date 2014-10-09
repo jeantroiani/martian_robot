@@ -3,10 +3,10 @@
 Martian Robot
 =============
 Program that tracks movement of cars on a grid. 
-It creates a grid of size given.
-User can deploys cars and send commands for them.
+It creates given size grid.
+User can deploy cars and send commands to them.
 A car can leave the grid, but after the incident
-no other car can make the same mistake, as instruction
+no other car can make the same mistake, as instructions
 will be ignore.
 
 Sample Input
@@ -30,7 +30,7 @@ Technologies used
 Models
 --------------
  **Robot**
- Can move freely in four directions North, South, East, West also rotate, inform where they are, and leave mesagges for other robots.
+ Can move freely in four directions North, South, East, West also rotate, inform where it is, and leave mesagges for other robots.
  **Grid**
  Creates a 2d grid and holds cells where robots can move on.
 **Cells**
