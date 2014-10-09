@@ -7,7 +7,7 @@ It creates given size grid.
 User can deploy cars and send commands to them.
 A car can leave the grid, but after the incident
 no other car can make the same mistake, as instructions
-will be ignore.
+will be ignored.
 
 Sample Input
 ------------
