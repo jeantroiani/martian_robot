@@ -6,7 +6,7 @@ class Orientation_system
 
 		@keys = {
 			'N' => 'E',
-			'E'	=> 'S',
+			'E' => 'S',
 			'S' => 'W',
 			'W' => 'N'
 		}
