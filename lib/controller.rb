@@ -18,6 +18,7 @@ class Controller
 
 
 	def parse(sequence)
+		if commands_limit(sequence)
 		convert_commands(sequence).map do |el|
 			if el == 'F'
 				move(vehicle)
@@ -29,6 +30,7 @@ class Controller
 			end
 		end
 		vehicle.print_output
+		end
 	end
 
 	private
