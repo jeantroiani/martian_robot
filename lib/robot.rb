@@ -11,10 +11,10 @@ class Robot
 	attr_accessor :prev_orientation
 
 	def initialize(coord_x, coord_y, orientation, orientation_system)
-		@coord_x 		 			= coord_x
-		@coord_y 		      = coord_y
-		@prev_x						= coord_x
-		@prev_y						= coord_y
+		@coord_x 	  = coord_x
+		@coord_y          = coord_y
+		@prev_x	          = coord_x
+		@prev_y		  = coord_y
 		@prev_orientation = orientation
 		@orientation      = orientation
 		@orientation_keys = orientation_system.keys
