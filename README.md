@@ -11,16 +11,16 @@ will be ignore.
 
 Sample Input
 ------------
-53
-11E RFRFRFRF
-32N FRRFLLFFRRFLL
-03W LLFFFLFLFL
+	53
+	11E RFRFRFRF
+	32N FRRFLLFFRRFLL
+	03W LLFFFLFLFL
 
 Sample Output
 -------------
-11E
-33NLOST
-23S
+	11E
+	33NLOST
+	23S
 
 Technologies used
 ------------------
@@ -29,26 +29,26 @@ Technologies used
 
 Models
 --------------
- **Robot**
- Can move freely in four directions North, South, East, West also rotate, inform where it is, and leave mesagges for other robots.
- **Grid**
- Creates a 2d grid and holds cells where robots can move on.
-**Cells**
- Robots can park on them and leave messages to other robots.
-**Orientation System**
+### Robot
+Can move freely in four directions North, South, East, West also rotate, inform where it is, and leave mesagges for other robots.
+### Grid
+Creates a 2d grid and holds cells where robots can move on.
+### Cells
+Robots can park on them and leave messages to other robots.
+### Orientation System
 System used by robots to rotate on spot.
-**Controller**
+### Controller
 Administrates the data comming from both robots and grids. It holds a grid, deploys robots to it, and parse a line of commands.
 
 
 How to setup and run it
 -----------------------
-cd to the root directory
-type bundle
-require './lib/controller.rb'
+	cd to the root directory
+	type bundle
+	require './lib/controller.rb'
 
 
 Testing instructions
 ----------------
-cd to the root directory
-type rspec
+	cd to the root directory
+	type rspec
