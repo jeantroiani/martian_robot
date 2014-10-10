@@ -49,8 +49,8 @@ How to setup and run it
 	require './lib/controller.rb'
 	type controller = Controller.new
 	controller.create_grid(number in X, number in Y)
-	controller.deploy(coordinate in x, coordinate in y, orientation) (Orientation can be "N","E","S" or "W")
-	controller.parse(sequence of instructions to your robot) (Can be a single command "F","R" or "L" or a line smaller than 50 like "FLRRLF")
+	controller.deploy(coordinate in x, coordinate in y, "orientation") (Orientation can be "N","E","S" or "W")
+	controller.parse("sequence of instructions to your robot") (Can be a single command "F","R" or "L" or a line smaller than 50 like "FLRRLF")
 	
 
 
