@@ -18,6 +18,7 @@ class Controller
 
 
 	def parse(sequence)
+		upcase sequence
 		if commands_limit(sequence)
 		convert_commands(sequence).map do |el|
 			if el == 'F'
@@ -37,6 +38,10 @@ class Controller
 
 	def commands_limit(sequence)
 		sequence.length < 101
+	end
+
+	def upcase(sequence)
+		sequence.upcase!
 	end
 
 	def grid_size_limit(amount)

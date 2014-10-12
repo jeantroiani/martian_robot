@@ -57,6 +57,16 @@ describe Robot do
 			expect(robot.orientation).to eq('W')
 		end
 
+		it 'turns even when command in lowercase' do
+			robot.turn('r')
+			expect(robot.orientation).to eq('E')
+		end
+
+		it 'Will not turn if used other than R or L to turn' do
+			robot.turn('X')
+			expect(robot.orientation).to eq('N')
+		end
+
 		it 'output his location and orientation on the grid' do
 			expect(robot.print_output).to eq('13N')
 		end

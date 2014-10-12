@@ -18,6 +18,18 @@ describe Controller do
 			expect(controller.grid.graticule[2][2].transport).to be_empty
 		end
 
+		it 'parse commands even if they are lowercase' do
+			controller.create_grid(5, 3)
+			controller.deploy(1, 1, 'E')
+			expect(controller.parse('lf')).to eq('12N')
+		end
+
+		it 'ignore commands that are not R L or F' do
+			controller.create_grid(5, 3)
+			controller.deploy(1, 1, 'E')
+			expect(controller.parse('lxfx')).to eq('12N')
+		end
+
 	end
 
 	context 'test' do

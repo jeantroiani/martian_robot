@@ -11,10 +11,10 @@ class Robot
 	attr_accessor :prev_orientation
 
 	def initialize(coord_x, coord_y, orientation, orientation_system)
-		@coord_x 	  = coord_x
+		@coord_x					= coord_x
 		@coord_y          = coord_y
 		@prev_x	          = coord_x
-		@prev_y		  = coord_y
+		@prev_y		  			= coord_y
 		@prev_orientation = orientation
 		@orientation      = orientation
 		@orientation_keys = orientation_system.keys
@@ -26,7 +26,14 @@ class Robot
 	end
 	
 	def turn(side)
-		side == "R" ? turn_right : turn_left
+		upcase(side)
+		if side == "R" 
+			turn_right
+		elsif side == "L"
+			turn_left
+		else
+			"Wrong command"
+		end
 	end
 
 	def set_to_lost
@@ -49,11 +56,12 @@ class Robot
 	private
 	
 	def move_forward_system
-		if @orientation == 'N' 
+		case orientation
+		when 'N' 
 			@coord_y += 1
-		elsif	@orientation == 'S'
+		when 'S'
 			@coord_y -= 1
-		elsif @orientation == 'E'
+		when 'E'
 			@coord_x += 1
 		else	
 			@coord_x -= 1
@@ -61,17 +69,21 @@ class Robot
 	end
 
 	def turn_right
-		@orientation = @orientation_keys[@orientation]
+		@orientation = orientation_keys[orientation]
 	end
 
 	def turn_left
-		@orientation = @orientation_keys.key(@orientation)
+		@orientation = orientation_keys.key(orientation)
 	end
-	
+
+	def upcase(command)
+		command.upcase!
+	end
+		
 	def save_previous_location
-		@prev_x	= @coord_x
-		@prev_y = @coord_y
-		@prev_orientation = @orientation
+		@prev_x	= coord_x
+		@prev_y = coord_y
+		@prev_orientation = orientation
 	end
 
 end
